@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Earthquake Ready | Teaching Game</title>
+    <meta
+      name="description"
+      content="A Year 4-friendly Key Stage 2 geography game about earthquakes, map skills, and community preparation."
+    >
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="../../" aria-label="Rishel Dsouza home">RD</a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="../../">Home</a>
+        <a href="../../#teaching">Teaching</a>
+        <a href="../../#experience">Experience</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section game-page" aria-labelledby="game-title">
+        <div class="section-heading">
+          <p class="section-kicker">Year 4 Geography Game</p>
+          <h1 id="game-title">Earthquake Ready</h1>
+          <p>
+            Six quick challenges for exploring earthquakes, world places, physical geography, and how communities prepare for natural hazards.
+          </p>
+        </div>
+
+        <div class="curriculum-note">
+          <span>KS2 geography link</span>
+          <p>
+            Physical geography includes volcanoes and earthquakes; pupils also use maps, atlases, globes, and digital mapping to locate places and describe features studied.
+            <a class="source-link" href="https://www.gov.uk/government/publications/national-curriculum-in-england-geography-programmes-of-study/national-curriculum-in-england-geography-programmes-of-study">GOV.UK geography programme</a>
+          </p>
+        </div>
+
+        <div class="quake-game" data-game="earthquake-ready">
+          <div class="quake-visual" aria-hidden="true">
+            <div class="fault-scene">
+              <span class="plate plate-left">Plate A</span>
+              <span class="plate plate-right">Plate B</span>
+              <span class="fault-line"></span>
+              <span class="epicentre-dot"></span>
+              <span class="quake-ring ring-one"></span>
+              <span class="quake-ring ring-two"></span>
+              <span class="town-dot town-one"></span>
+              <span class="town-dot town-two"></span>
+              <span class="town-dot town-three"></span>
+            </div>
+            <div class="readiness-meter">
+              <span>Town readiness</span>
+              <div class="meter-track">
+                <span class="meter-fill" data-readiness-fill></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="quake-panel">
+            <div class="game-status" aria-label="Game progress">
+              <div>
+                <strong data-round-count>1 / 6</strong>
+                <span>Challenge</span>
+              </div>
+              <div>
+                <strong data-score-count>0</strong>
+                <span>Ready points</span>
+              </div>
+            </div>
+
+            <div class="question-block">
+              <p class="question-label" data-question-label>Physical geography</p>
+              <h3 data-question-title>Loading question</h3>
+              <p data-question-text></p>
+            </div>
+
+            <div class="answer-grid" data-answer-grid aria-label="Answer choices"></div>
+            <p class="game-feedback" data-feedback aria-live="polite"></p>
+
+            <div class="game-actions">
+              <button class="button secondary-button" type="button" data-reset-game>Restart</button>
+              <button class="button" type="button" data-next-question disabled>Next</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Rishel Dsouza. Built as a simple classroom activity.</p>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>

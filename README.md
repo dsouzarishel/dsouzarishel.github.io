@@ -8,5 +8,6 @@ Minimal static portfolio site for Rishel Dsouza, built for GitHub Pages.
 - `assets/css/styles.css` - visual design
 - `assets/js/main.js` - small progressive enhancement
 - `assets/images/` - project image assets
+- `games/Teaching/` - standalone classroom game route
 
 The public CV file is intentionally not included in this repository.
