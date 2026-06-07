@@ -1,0 +1,7 @@
+# Keep private source documents out of the public website.
+*.pdf
+*.doc
+*.docx
+
+.DS_Store
+Thumbs.db
