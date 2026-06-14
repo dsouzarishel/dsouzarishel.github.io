@@ -23,7 +23,7 @@ body {
   margin: 0;
   background: var(--page);
   color: var(--ink);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.65;
   letter-spacing: 0;
@@ -118,6 +118,7 @@ h1,
 h2,
 h3 {
   margin: 0;
+  font-family: Raleway, Nunito, ui-sans-serif, system-ui, sans-serif;
   line-height: 1.08;
   font-weight: 720;
 }
@@ -253,6 +254,62 @@ h3 {
 
 .source-link:hover {
   text-decoration-color: currentColor;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 18px;
+}
+
+.app-card {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  min-height: 100%;
+  padding: 8px 0 0;
+  border-radius: 8px;
+}
+
+.app-card-featured {
+  padding-right: 28px;
+}
+
+.app-label,
+.app-reference {
+  margin: 0;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.app-label {
+  color: var(--clay);
+}
+
+.app-card h3 {
+  font-size: 1.3rem;
+}
+
+.app-card p:not(.app-label, .app-reference) {
+  margin: 0;
+  color: var(--muted);
+}
+
+.app-reference {
+  color: var(--sage-deep);
+}
+
+.app-points {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.app-card .button {
+  justify-self: start;
+  margin-top: 2px;
 }
 
 .teaching-launch {
@@ -667,6 +724,7 @@ h3 {
   .contact,
   .curriculum-note,
   .quake-game,
+  .app-grid,
   .timeline-item,
   .strength-grid,
   .detail-grid {

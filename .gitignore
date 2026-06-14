@@ -5,3 +5,18 @@
 
 .DS_Store
 Thumbs.db
+
+# Codex local runtime output
+.codex/logs/
+
+# Private Paper Sweep benchmark recordings and derived analysis output
+paper-sweep-benchmark-*.webm
+paper-sweep-benchmark-*.mp4
+paper-sweep-benchmark-*.json
+paper-sweep-benchmark-*.jpg
+paper-sweep-benchmark-*.jpeg
+paper-sweep-benchmark-*.png
+apps/paper-sweep/.private-benchmarks/
+apps/paper-sweep/benchmark-data/
+apps/paper-sweep/benchmark-output/
+apps/paper-sweep/analysis-output/

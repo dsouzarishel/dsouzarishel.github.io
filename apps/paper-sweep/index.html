@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paper Sweep | Fast Document Capture</title>
+    <meta
+      name="description"
+      content="A local browser tool that helps teachers save clear changed shots from classroom documents."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Raleway:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    >
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="scanner-header" aria-label="Paper Sweep">
+      <a class="home-mark" href="../../" aria-label="Back to Rishel Dsouza home">RD</a>
+      <div class="scanner-title">
+        <p>Fast document capture</p>
+        <h1>Paper Sweep</h1>
+      </div>
+      <div class="header-actions">
+        <span class="privacy-chip">
+          <i class="fa-solid fa-lock" aria-hidden="true"></i>
+          On-device
+        </span>
+        <details class="settings-menu">
+          <summary class="icon-button" aria-label="Settings">
+            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+          </summary>
+          <div class="settings-panel">
+            <button class="settings-action" type="button" data-action="benchmark-start">
+              <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+              Benchmark
+            </button>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <main class="scanner-shell">
+      <section class="scan-workbench" aria-labelledby="camera-title">
+        <div class="workbench-copy">
+          <p class="section-kicker">Auto capture</p>
+          <div>
+            <h2 id="camera-title">Capture class documents.</h2>
+            <p>Save question papers, answer sheets, grades, notes, and other records from camera or video.</p>
+          </div>
+        </div>
+
+        <div class="viewer" data-viewer hidden>
+          <video id="cameraFeed" autoplay muted playsinline></video>
+          <canvas id="overlayCanvas" aria-hidden="true"></canvas>
+          <div class="benchmark-hud" data-benchmark-panel hidden>
+            <div>
+              <span>Benchmark</span>
+              <strong>Page <b data-benchmark-page>0</b></strong>
+              <small data-benchmark-time>00:00</small>
+            </div>
+            <button class="benchmark-mark" type="button" data-action="benchmark-mark">
+              <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+              Page ready
+            </button>
+            <button class="benchmark-stop" type="button" data-action="benchmark-stop" aria-label="Stop benchmark recording">
+              <i class="fa-solid fa-stop" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="scan-state">
+            <span data-scan-state>Idle</span>
+            <strong><span data-page-count-large>0</span> docs</strong>
+          </div>
+          <div class="viewer-empty" data-viewer-empty>
+            <i class="fa-solid fa-camera" aria-hidden="true"></i>
+            <strong>Capture documents</strong>
+            <span>Start camera or upload a video</span>
+          </div>
+        </div>
+
+        <div class="controls" aria-label="Capture controls">
+          <button class="control-button primary-control" type="button" data-action="start">
+            <i class="fa-solid fa-video" aria-hidden="true"></i>
+            Start camera
+          </button>
+          <label class="control-button file-control" for="videoUpload" data-upload-label aria-disabled="true" aria-label="Upload video">
+            <i class="fa-solid fa-upload" aria-hidden="true"></i>
+            Upload
+          </label>
+          <input id="videoUpload" class="visually-hidden" type="file" accept="video/*" disabled>
+          <button class="control-button" type="button" data-action="stop" disabled hidden aria-label="Stop scanning">
+            <i class="fa-solid fa-stop" aria-hidden="true"></i>
+            Stop
+          </button>
+        </div>
+
+        <p class="status-line" data-status>Starting frame analysis...</p>
+        <div class="benchmark-downloads" data-benchmark-downloads hidden>
+          <a class="download-link" data-benchmark-video-download href="#" download>Download video</a>
+          <a class="download-link" data-benchmark-label-download href="#" download>Download labels</a>
+        </div>
+
+        <details class="metrics" aria-labelledby="metrics-title" hidden>
+          <summary id="metrics-title">Document quality</summary>
+          <div class="metric-row">
+            <span>Current frame</span>
+            <strong data-metric="document">Waiting</strong>
+          </div>
+          <div class="metric-row">
+            <span>Quality</span>
+            <strong data-metric="quality">0%</strong>
+          </div>
+          <div class="meter" aria-hidden="true">
+            <span data-meter="quality"></span>
+          </div>
+          <div class="metric-row">
+            <span>Sharpness</span>
+            <strong data-metric="sharpness">0</strong>
+          </div>
+          <div class="metric-row">
+            <span>Difference</span>
+            <strong data-metric="change">New</strong>
+          </div>
+        </details>
+      </section>
+
+      <section class="pages-panel" aria-labelledby="pages-title" hidden>
+        <div class="pages-heading">
+          <div>
+            <h2 id="pages-title">Saved documents</h2>
+            <p><span data-page-count>0</span> saved automatically</p>
+          </div>
+          <div class="export-actions" data-export-actions hidden>
+            <button class="export-link" type="button" data-action="export-pdf" disabled>
+              <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+              PDF
+            </button>
+            <button class="export-link" type="button" data-action="export-zip" disabled>
+              <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
+              ZIP
+            </button>
+          </div>
+          <button class="icon-button" type="button" data-action="clear" disabled hidden aria-label="Clear saved shots">
+            <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="page-strip" data-pages aria-live="polite"></div>
+      </section>
+
+      <details class="about-panel">
+        <summary>About Paper Sweep</summary>
+        <p>
+          Paper Sweep helps teachers preserve classroom documents quickly: question papers, answer sheets, grade records, handwritten notes, worksheets, and other pages worth keeping. It runs in the browser, chooses sharp changed frames, and can export either a simple PDF or a ZIP with the PDF, selected images, and nearby non-blurry candidates.
+        </p>
+      </details>
+
+      <canvas id="analysisCanvas" hidden></canvas>
+      <canvas id="sourceCanvas" hidden></canvas>
+    </main>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script type="module" src="js/main.js?v=epoch-9"></script>
+  </body>
+</html>

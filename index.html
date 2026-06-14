@@ -8,6 +8,12 @@
       name="description"
       content="Rishel Dsouza is a teacher and educator focused on inclusive classrooms, English, Social Studies, and experiential learning."
     >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Raleway:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    >
     <link rel="preload" href="assets/images/educator-workspace.jpg" as="image">
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
@@ -16,7 +22,7 @@
       <a class="brand" href="#top" aria-label="Rishel Dsouza home">RD</a>
       <nav class="site-nav" aria-label="Site navigation">
         <a href="#about">About</a>
-        <a href="#teaching">Teaching</a>
+        <a href="#apps">Apps</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -62,29 +68,41 @@
         </div>
       </section>
 
-      <section class="section teaching" id="teaching" aria-labelledby="teaching-title">
+      <section class="section apps" id="apps" aria-labelledby="apps-title">
         <div class="section-heading">
-          <p class="section-kicker">Teaching App</p>
-          <h2 id="teaching-title">Earthquake Ready</h2>
+          <p class="section-kicker">Teacher Tools</p>
+          <h2 id="apps-title">Classroom apps for marking, preparation, and lessons.</h2>
           <p>
-            A Year 4-friendly Key Stage 2 geography game about earthquakes, map thinking, and how people prepare for natural hazards.
+            Small tools for teachers who need useful support without setup.
           </p>
         </div>
 
-        <div class="curriculum-note">
-          <span>KS2 geography link</span>
-          <p>
-            Physical geography includes volcanoes and earthquakes; pupils also use maps, atlases, globes, and digital mapping to locate places and describe features studied.
-            <a class="source-link" href="https://www.gov.uk/government/publications/national-curriculum-in-england-geography-programmes-of-study/national-curriculum-in-england-geography-programmes-of-study">GOV.UK geography programme</a>
-          </p>
-        </div>
+        <div class="app-grid" aria-label="Teacher tools">
+          <article class="app-card app-card-featured">
+            <p class="app-label">Fast document capture</p>
+            <h3>Paper Sweep</h3>
+            <p>
+              Save clear classroom documents as you flip through papers. Paper Sweep watches for sharp material changes and exports a PDF or image ZIP.
+            </p>
+            <ul class="app-points">
+              <li>Frames stay on the device</li>
+              <li>Useful for question papers, answers, grades, and notes</li>
+              <li>Changed documents save automatically</li>
+            </ul>
+            <a class="button" href="apps/paper-sweep/">Open tool</a>
+          </article>
 
-        <div class="teaching-launch">
-          <div>
-            <h3>Play the classroom game</h3>
-            <p>Short challenges help pupils connect earthquake causes, place knowledge, vocabulary, map tools, and community preparation.</p>
-          </div>
-          <a class="button" href="games/Teaching/">Open game</a>
+          <article class="app-card">
+            <p class="app-label">KS2 geography game</p>
+            <h3>Earthquake Ready</h3>
+            <p>
+              A Year 4-friendly geography game about earthquakes, map thinking, vocabulary, and community preparation.
+            </p>
+            <p class="app-reference">
+              Linked to the GOV.UK geography programme for physical geography and map skills.
+            </p>
+            <a class="button secondary-button" href="games/Teaching/">Open game</a>
+          </article>
         </div>
       </section>
 
